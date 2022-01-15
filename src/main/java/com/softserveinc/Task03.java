@@ -23,17 +23,19 @@ public class Task03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number after symbol >>>. To exit enter a zero.");
+
         int number;
         int min = 0;
-
-        int i = 0;
-        while (i < 1) {
+        do {
             System.out.print(">>> ");
             number = scanner.nextInt();
-            min = number;
-            i++;
-
+            if (number > 0) {
+                min = number;
+            } else {
+                System.out.println("Enter the number after symbol >>>. To exit enter a zero.");
+            }
         }
+        while (number <= 0);
 
         do {
             System.out.print(">>> ");

@@ -30,7 +30,7 @@ public class Task01Test {
         // assertion
         String output = bos.toString();
         assertNotNull(output, "Output should not be null");
-        assertFalse(output.isEmpty() || output.isBlank(), "Output should not be blank or empty");
+        assertFalse(output.isEmpty(), "Output should not be blank or empty");
         String actual = Arrays.stream(output.split("\\n")).map(String::trim).collect(Collectors.joining("\n"));
         assertEquals(expected, actual);
 

@@ -1,5 +1,6 @@
 package com.softserveinc;
 
+import javax.naming.PartialResultException;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
@@ -35,20 +36,21 @@ public class Task02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("t1 >>> ");
-        int t1 = scanner.nextInt();
+        double t1 = scanner.nextDouble();
 
         System.out.print("t2 >>> ");
-        int t2 = scanner.nextInt();
+        double t2 = scanner.nextDouble();
 
         System.out.print("dt >>> ");
-        int dt = scanner.nextInt();
+        double dt = scanner.nextDouble();
 
         System.out.print("-----------------\n" + "C       F\n" + "-----------------\n");
 
-        int n = ((t2 - t1) / dt) + 1;
+        double num = ((t2 - t1) / dt) + 1;
+        int n = (int)num;
         double[] Celsius = new double[n];
 
-        int i = t1;
+        double i = t1;
         int b = 0;
         while (i <= t2) {
             Celsius[b] = i;
