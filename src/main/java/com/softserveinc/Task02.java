@@ -1,5 +1,7 @@
 package com.softserveinc;
 
+import javax.naming.PartialResultException;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -15,6 +17,7 @@ import java.util.Scanner;
     dt >>> 1
     -----------------
     C       F
+
     -----------------
     0.00    32.00
     1.00    33.80
@@ -32,7 +35,37 @@ import java.util.Scanner;
 public class Task02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // TODO: Write your code here
+        System.out.print("t1 >>> ");
+        double t1 = scanner.nextDouble();
+
+        System.out.print("t2 >>> ");
+        double t2 = scanner.nextDouble();
+
+        System.out.print("dt >>> ");
+        double dt = scanner.nextDouble();
+
+        System.out.print("-----------------\n" + "C       F\n" + "-----------------\n");
+
+        double num = ((t2 - t1) / dt) + 1;
+        int n = (int)num;
+        double[] Celsius = new double[n];
+
+        double i = t1;
+        int b = 0;
+        while (i <= t2) {
+            Celsius[b] = i;
+            i = i + dt;
+            b++;
+        }
+
+        int c = 0;
+        while (c < Celsius.length) {
+            System.out.printf("%.2f    ", Celsius[c]);
+            System.out.printf("%.2f\n", (9.00 / 5.00 * Celsius[c]) + 32.00);
+            c++;
+        }
+
+        System.out.println("-----------------");
 
     }
 }
